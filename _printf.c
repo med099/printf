@@ -44,8 +44,7 @@ int _printf(const char *format, ...)
 			}
 			if (i == 3)
 			{
-				_putchar('%');
-				sum++;
+				sum += print_cent();
 				format++;
 			}
 		}
