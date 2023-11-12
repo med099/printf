@@ -3,13 +3,18 @@
 /**
  * check_str - check string if is NULL
  * @str: string to check it
+ * @len: lenth of string
  * Return: string or "(nil)" if string is NULL
 */
-char *check_str(char *str)
+char *check_str(char *str, int *len)
 {
 	if (str)
+	{
+		*len = _strlen(str);
 		return (str);
-	return ("(nil)");
+	}
+	*len = 6;
+	return ("(null)");
 }
 
 /**
@@ -63,8 +68,10 @@ int print_char(va_list c)
 int print_str(va_list s)
 {
 	char *str;
+	int len;
 
 	str = va_arg(s, char*);
-	_puts(check_str(str));
-	return (_strlen(str));
+	str = check_str(str, &len);
+	_puts(str);
+	return (len);
 }

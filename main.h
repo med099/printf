@@ -18,7 +18,7 @@ typedef struct Form
 int _printf(const char *format, ...);
 int print_char(va_list c);
 int print_str(va_list s);
-char *check_str(char *str);
+char *check_str(char *str, int *len);
 int _strlen(char *str);
 int _putchar(char c);
 void _puts(char *str);
