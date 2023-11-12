@@ -1,6 +1,17 @@
 #include "main.h"
 
 /**
+ * print_cent - print cent
+ * @cent: print it
+ * Return: 1
+*/
+int print_cent(void)
+{
+	_putchar('%');
+	return (1);
+}
+
+/**
  * _printf - printf function
  * @format: format
  * Return: lenth of outputs
@@ -12,6 +23,7 @@ int _printf(const char *format, ...)
 	_Form type[] = {
 		{'c', print_char},
 		{'s', print_str},
+		{'%', print_cent},
 	};
 
 	va_start(args, format);
