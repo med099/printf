@@ -43,9 +43,7 @@ int _printf(const char *format, ...)
 				i++;
 			}
 		}
-		if (!(*format))
-			break;
-		if (i != 2)
+		else
 		{
 			_putchar(*format);
 			i = 0;
