@@ -14,6 +14,7 @@ typedef struct Form
 	char valid_type;
 	int (*f)();
 } _Form;
+
 int _printf(const char *format, ...);
 int print_char(va_list c);
 int print_str(va_list s);
