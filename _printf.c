@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _print - printf function
+ * _printf - printf function
  * @format: format
  * Return: lenth of outputs
 */
