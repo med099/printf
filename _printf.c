@@ -19,10 +19,7 @@ int _printf(const char *format, ...)
 {
 	int sum, i;
 	va_list args;
-	_Form type[] = {
-		{'c', print_char}, {'s', print_str},
-		{'%', print_cent},
-	};
+	_Form type[] = {{'c', print_char}, {'s', print_str}, {'%', print_cent}, };
 
 	va_start(args, format);
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
@@ -32,12 +29,11 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			i = 0;
 			while (*(format + 1) == ' ')
 				format++;
 			if (*(format + 1) == '\0')
 				return (-1);
-			while (i < 3)
+			for (i = 0; i < 3; i++)
 			{
 				if (*(format + 1) == type[i].valid_type)
 				{
@@ -45,7 +41,12 @@ int _printf(const char *format, ...)
 					format += 2;
 					break;
 				}
-				i++;
+			}
+			if (i == 3)
+			{
+				_putchar('%');
+				sum++;
+				format++;
 			}
 		}
 		else
