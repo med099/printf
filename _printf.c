@@ -2,7 +2,6 @@
 
 /**
  * print_cent - print cent
- * @cent: print it
  * Return: 1
 */
 int print_cent(void)
@@ -33,7 +32,7 @@ int _printf(const char *format, ...)
 		if (*format == '%')
 		{
 			i = 0;
-			while (i < 2)
+			while (i < 3)
 			{
 				if (*(format + 1) == type[i].valid_type)
 				{
@@ -46,9 +45,13 @@ int _printf(const char *format, ...)
 		}
 		if (!(*format))
 			break;
-		_putchar(*format);
-		format++;
-		sum++;
+		if (i != 2)
+		{
+			_putchar(*format);
+			i = 0;
+			format++;
+			sum++;
+		}
 	}
 	va_end(args);
 

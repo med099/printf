@@ -22,4 +22,5 @@ char *check_str(char *str);
 int _strlen(char *str);
 int _putchar(char c);
 void _puts(char *str);
+int print_cent(void);
 #endif
