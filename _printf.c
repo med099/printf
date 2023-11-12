@@ -5,7 +5,7 @@
  * @format: format
  * Return: lenth of outputs
 */
-int _print(const char *format, ...)
+int _printf(const char *format, ...)
 {
 	int sum, i;
 	va_list args;
