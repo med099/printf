@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 			{
 				if (*(format + 1) == type[i].valid_type)
 				{
-					sum += (type[i].f)(args); 
+					sum += (type[i].f)(args);
 					format += 2;
 					break;
 				}
