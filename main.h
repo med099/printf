@@ -23,4 +23,6 @@ int _strlen(char *str);
 int _putchar(char c);
 void _puts(char *str);
 int print_cent(void);
+int print_int(va_list i);
+
 #endif
