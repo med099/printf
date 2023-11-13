@@ -26,11 +26,11 @@ int _printf(const char *format, ...)
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
 	sum = 0;
-	while (*format != '\0') //Check the null byte format
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
-			while (*(format + 1) == ' ') //skip spaces
+			while (*(format + 1) == ' ') 
 				format++;
 			if (*(format + 1) == '\0')
 				return (-1);
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 			{
 				if (*(format + 1) == type[i].valid_type)
 				{
-					sum += (type[i].f)(args); //call valid format
+					sum += (type[i].f)(args); 
 					format += 2;
 					break;
 				}
