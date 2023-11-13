@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 	{
 		if (*format == '%')
 		{
-			while (*(format + 1) == ' ') 
+			while (*(format + 1) == ' ')
 				format++;
 			if (*(format + 1) == '\0')
 				return (-1);
