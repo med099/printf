@@ -67,13 +67,11 @@ int print_char(va_list c)
 */
 int print_str(va_list s)
 {
-    char *str;
-    int len;
-    char buffer[1024];
+	char *str;
+	int len;
 
-    str = va_arg(s, char*);
-    str = check_str(str, &len);
-    strncpy(buffer, str, 1024);
-    _puts(buffer);
-    return (len);
+	str = va_arg(s, char*);
+	str = check_str(str, &len);
+	_puts(str);
+	return (len);
 }

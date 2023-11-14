@@ -26,7 +26,7 @@ int _printf(const char *format, ...)
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
 	sum = 0;
-	while (*format != '\0' && sum < 1025)
+	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
