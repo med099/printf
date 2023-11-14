@@ -17,7 +17,7 @@ int print_cent(void)
 */
 int _printf(const char *format, ...)
 {
-	int sum, i;
+	int sum = 0, i;
 	va_list args;
 	_Form type[] = {{'c', print_char}, {'s', print_str}, {'%', print_cent},
 	{'d', print_int}, {'i', print_int},};
@@ -25,7 +25,6 @@ int _printf(const char *format, ...)
 	va_start(args, format);
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
 		return (-1);
-	sum = 0;
 	while (*format != '\0')
 	{
 		if (*format == '%')
@@ -55,6 +54,7 @@ int _printf(const char *format, ...)
 			sum++;
 		}
 	}
+	_putchar(-1);
 	va_end(args);
 	return (sum);
 }
