@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 	int sum = 0, i;
 	va_list args;
 	_Form type[] = {{'c', print_char}, {'s', print_str}, {'%', print_cent},
-	{'d', print_int}, {'i', print_int},};
+	{'d', print_int}, {'i', print_int}, {'b', print_b},};
 
 	va_start(args, format);
 	if (format == NULL || (*format == '%' && *(format + 1) == '\0'))
@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 				format++;
 			if (*(format + 1) == '\0')
 				return (-1);
-			for (i = 0; i < 5; i++)
+			for (i = 0; i < 6; i++)
 			{
 				if (*(format + 1) == type[i].valid_type)
 				{
@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (i == 5)
+			if (i == 6)
 			{
 				sum += print_cent();
 				format++;
