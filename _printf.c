@@ -1,16 +1,6 @@
 #include "main.h"
 
 /**
- * print_cent - print cent
- * Return: 1
-*/
-int print_cent(void)
-{
-	_putchar('%');
-	return (1);
-}
-
-/**
  * _printf - printf function
  * @format: format
  * Return: lenth of outputs

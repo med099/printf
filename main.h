@@ -25,5 +25,7 @@ int _putchar(char c);
 void _puts(char *str);
 int print_cent(void);
 int print_int(va_list i);
+void to_binary(unsigned int n, int *len);
+int print_b(va_list b);
 
 #endif

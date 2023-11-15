@@ -48,3 +48,43 @@ int print_int(va_list i)
 	_putnbr(j, &len);
 	return (len);
 }
+
+/**
+ * print_cent - print cent
+ * Return: 1
+*/
+int print_cent(void)
+{
+	_putchar('%');
+	return (1);
+}
+
+/**
+ * to_binary - function that converted unsigned int
+ * to binary
+ * @n: number
+ * @len: len of the binary
+*/
+void to_binary(unsigned int n, int *len)
+{
+	if (!n)
+		return;
+	(*len)++;
+	to_binary(n / 2, len);
+	putchar(48 + (n % 2));
+}
+
+/**
+ * print_b - function that do conversion specifiers
+ * @b: number
+ * Return: length of binary printed
+*/
+int print_b(va_list b)
+{
+	int len;
+	unsigned int n;
+
+	len = 0;
+	to_binary((va_arg(b, int)), &len);
+	return (len);
+}
